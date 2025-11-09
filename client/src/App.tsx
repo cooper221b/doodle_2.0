@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import PrivateRoute from './components/PrivateRoute';
+import DeploymentStatus from './components/DeploymentStatus';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -19,6 +20,7 @@ function App() {
     <Router>
       <AuthProvider>
         <Navbar />
+        <DeploymentStatus />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />

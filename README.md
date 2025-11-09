@@ -4,15 +4,25 @@ A minimal full-stack scheduling application that supports:
 - **Group Polls** - Doodle-style availability polls for finding the best time for group meetings
 - **Booking Pages** - Calendly-style one-on-one booking pages
 
-## 🚀 Deployment
+## 🚀 Deploy to GitHub Pages
 
-**Want to deploy this app? See [DEPLOYMENT.md](DEPLOYMENT.md) for complete instructions.**
+**No local setup required!** Deploy entirely in the cloud and test on GitHub Pages.
 
-Quick overview:
-- **Frontend**: Deploy to GitHub Pages (free, automated via GitHub Actions)
-- **Backend**: Deploy to Railway or Render (free tier available)
+### Quick Deploy (10 minutes)
 
-The app is production-ready with automated deployment workflows included!
+1. **Deploy Backend**: Follow [GITHUB_PAGES_DEPLOY.md](GITHUB_PAGES_DEPLOY.md) to set up Railway (free, 5 min)
+2. **Enable Pages**: Go to repo Settings → Pages → Source: "GitHub Actions"
+3. **Set API URL**: Settings → Secrets and variables → Actions → Variables → Add `VITE_API_URL`
+4. **Merge to main**: Push to main branch or merge PR
+5. **Test live**: Visit `https://cooper221b.github.io/doodle_2.0/`
+
+**Complete step-by-step guide**: [GITHUB_PAGES_DEPLOY.md](GITHUB_PAGES_DEPLOY.md)
+
+The app includes:
+- ✅ GitHub Actions workflow (auto-deploy on push to main)
+- ✅ Railway/Render configs (backend hosting)
+- ✅ Connection status indicator (shows if backend is working)
+- ✅ All dependencies configured
 
 ## Tech Stack
 
