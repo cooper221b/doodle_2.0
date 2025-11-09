@@ -1,0 +1,106 @@
+// Prisma schema for scheduling app
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String         @id @default(uuid())
+  name          String
+  email         String         @unique
+  password_hash String
+  created_at    DateTime       @default(now())
+
+  polls         Poll[]
+  booking_pages BookingPage[]
+
+  @@map("users")
+}
+
+model Poll {
+  id          String         @id @default(uuid())
+  owner_id    String         @map("owner_user_id")
+  public_id   String         @unique
+  title       String
+  description String?
+  created_at  DateTime       @default(now())
+
+  owner       User           @relation(fields: [owner_id], references: [id], onDelete: Cascade)
+  slots       PollSlot[]
+  responses   PollResponse[]
+
+  @@map("polls")
+}
+
+model PollSlot {
+  id         String         @id @default(uuid())
+  poll_id    String
+  start_time DateTime
+  end_time   DateTime
+
+  poll       Poll           @relation(fields: [poll_id], references: [id], onDelete: Cascade)
+  responses  PollResponse[]
+
+  @@map("poll_slots")
+}
+
+model PollResponse {
+  id               String   @id @default(uuid())
+  poll_id          String
+  slot_id          String
+  participant_name String
+  choice           String   // "yes" or "no"
+
+  poll             Poll     @relation(fields: [poll_id], references: [id], onDelete: Cascade)
+  slot             PollSlot @relation(fields: [slot_id], references: [id], onDelete: Cascade)
+
+  @@map("poll_responses")
+}
+
+model BookingPage {
+  id               String             @id @default(uuid())
+  owner_id         String             @map("owner_user_id")
+  public_id        String             @unique
+  name             String
+  description      String?
+  duration_minutes Int
+  timezone         String
+  created_at       DateTime           @default(now())
+
+  owner            User               @relation(fields: [owner_id], references: [id], onDelete: Cascade)
+  availability     AvailabilityRule[]
+  bookings         Booking[]
+
+  @@map("booking_pages")
+}
+
+model AvailabilityRule {
+  id               String      @id @default(uuid())
+  booking_page_id  String
+  day_of_week      Int         // 0 (Sunday) to 6 (Saturday)
+  start_time_local String      // HH:mm format
+  end_time_local   String      // HH:mm format
+
+  booking_page     BookingPage @relation(fields: [booking_page_id], references: [id], onDelete: Cascade)
+
+  @@map("availability_rules")
+}
+
+model Booking {
+  id              String      @id @default(uuid())
+  booking_page_id String
+  start_time      DateTime
+  end_time        DateTime
+  invitee_name    String
+  invitee_email   String
+  created_at      DateTime    @default(now())
+
+  booking_page    BookingPage @relation(fields: [booking_page_id], references: [id], onDelete: Cascade)
+
+  @@map("bookings")
+}

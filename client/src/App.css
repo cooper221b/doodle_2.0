@@ -1,0 +1,302 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.nav {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav h1 {
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.nav a:hover {
+  background-color: #34495e;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+}
+
+.btn-secondary {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #7f8c8d;
+}
+
+.btn-success {
+  background-color: #27ae60;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #229954;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.error {
+  background-color: #fee;
+  color: #c00;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.success {
+  background-color: #efe;
+  color: #060;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table th,
+table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.poll-list,
+.booking-page-list {
+  list-style: none;
+}
+
+.poll-item,
+.booking-page-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.poll-item h3,
+.booking-page-item h3 {
+  margin-bottom: 0.5rem;
+}
+
+.poll-item p,
+.booking-page-item p {
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.slot-inputs {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.slot-inputs h4 {
+  margin-bottom: 0.5rem;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.calendar-day {
+  background: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.calendar-day h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.time-slot {
+  background-color: #e8f4f8;
+  padding: 0.4rem;
+  margin-bottom: 0.3rem;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.time-slot:hover {
+  background-color: #d1e7f0;
+  border-color: #3498db;
+}
+
+.time-slot.selected {
+  background-color: #3498db;
+  color: white;
+  border-color: #2980b9;
+}
+
+.availability-day {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+}
+
+.public-url {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+  font-family: monospace;
+  word-break: break-all;
+}
+
+.response-table {
+  margin-top: 2rem;
+}
+
+.response-choice {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.response-choice input[type="radio"] {
+  width: auto;
+  margin: 0;
+}
