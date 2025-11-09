@@ -4,6 +4,16 @@ A minimal full-stack scheduling application that supports:
 - **Group Polls** - Doodle-style availability polls for finding the best time for group meetings
 - **Booking Pages** - Calendly-style one-on-one booking pages
 
+## 🚀 Deployment
+
+**Want to deploy this app? See [DEPLOYMENT.md](DEPLOYMENT.md) for complete instructions.**
+
+Quick overview:
+- **Frontend**: Deploy to GitHub Pages (free, automated via GitHub Actions)
+- **Backend**: Deploy to Railway or Render (free tier available)
+
+The app is production-ready with automated deployment workflows included!
+
 ## Tech Stack
 
 ### Backend

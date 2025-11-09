@@ -1,4 +1,5 @@
-const API_BASE = '/api';
+// Use environment variable for API URL, fallback to /api for local dev
+const API_BASE = import.meta.env.VITE_API_URL || '/api';
 
 async function request(url: string, options: RequestInit = {}) {
   const token = localStorage.getItem('token');

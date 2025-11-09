@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: scheduling-app-api
+    runtime: node
+    buildCommand: cd server && npm install && npx prisma generate && npm run build
+    startCommand: cd server && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: scheduling-app-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: PORT
+        value: 3001
+
+databases:
+  - name: scheduling-app-db
+    databaseName: scheduling_app
+    user: scheduling_app_user
