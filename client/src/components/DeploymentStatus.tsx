@@ -60,8 +60,8 @@ export default function DeploymentStatus() {
         position: 'fixed',
         bottom: '20px',
         right: '20px',
-        background: '#f8d7da',
-        border: '1px solid #f5c2c7',
+        background: '#cfe2ff',
+        border: '1px solid #9ec5fe',
         borderRadius: '8px',
         padding: '16px',
         boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
@@ -73,45 +73,27 @@ export default function DeploymentStatus() {
             <div style={{
               width: '12px',
               height: '12px',
-              background: '#dc3545',
+              background: '#0d6efd',
               borderRadius: '50%'
             }} />
-            <span style={{ fontSize: '14px', fontWeight: '600', color: '#721c24' }}>
-              Backend Not Connected
+            <span style={{ fontSize: '14px', fontWeight: '600', color: '#084298' }}>
+              🎭 Demo Mode
             </span>
           </div>
-          <p style={{ fontSize: '13px', color: '#721c24', margin: '0 0 8px 20px' }}>
-            The app cannot connect to the backend API.
+          <p style={{ fontSize: '13px', color: '#084298', margin: '0 0 8px 20px' }}>
+            Running with mock data stored in your browser. All features work, but data won't persist across devices.
           </p>
-          <details style={{ fontSize: '12px', color: '#721c24', marginLeft: '20px' }}>
+          <details style={{ fontSize: '12px', color: '#084298', marginLeft: '20px' }}>
             <summary style={{ cursor: 'pointer', marginBottom: '8px' }}>
-              Troubleshooting Steps
+              Want to save data permanently?
             </summary>
             <ol style={{ margin: '4px 0', paddingLeft: '20px' }}>
-              <li>Deploy backend to Railway (see GITHUB_PAGES_DEPLOY.md)</li>
+              <li>Deploy backend to Railway (free, 5 min)</li>
               <li>Set VITE_API_URL in GitHub repo settings</li>
-              <li>Redeploy frontend from GitHub Actions</li>
+              <li>See GITHUB_PAGES_DEPLOY.md for instructions</li>
             </ol>
-            <p style={{ marginTop: '8px' }}>
-              <strong>API URL:</strong> {apiUrl || 'Not configured'}
-            </p>
           </details>
         </div>
-        <button
-          onClick={checkBackend}
-          style={{
-            background: '#dc3545',
-            color: 'white',
-            border: 'none',
-            padding: '6px 12px',
-            borderRadius: '4px',
-            fontSize: '12px',
-            cursor: 'pointer',
-            marginLeft: '20px'
-          }}
-        >
-          Retry Connection
-        </button>
       </div>
     );
   }
