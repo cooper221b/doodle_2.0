@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main, master, claude/build-scheduling-app-011CUy5hxA7vtN4ZqNjF1wSv ]
   workflow_dispatch:
 
 permissions:
